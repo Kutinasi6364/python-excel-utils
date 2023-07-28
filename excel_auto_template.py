@@ -35,7 +35,14 @@ def write_cell_and_format(file_path, sheet_name, row, column, value, font=None, 
     if fill:
         cell.fill = fill
 
-    wb.save(file_path)
+    filename = filedialog.asksaveasfilename(
+        title = "名前を付けて保存",
+        filetypes = [("Excel", ".xls"), ("Excel", ".xlsx") ], # ﾌｧｲﾙﾌｨﾙﾀ
+        initialdir = "./", # 自分自身のﾃﾞｨﾚｸﾄﾘ
+        defaultextension = "excel"
+    )
+
+    wb.save(filename)
     wb.close()
 
 
@@ -48,9 +55,9 @@ def create_and_insert_chart(file_path, sheet_name, data_range, chart_title, char
     Args:
         file_path (str): Excelﾌｧｲﾙﾊﾟｽ
         sheet_name (str): ｼｰﾄ名
-        data_range (int): ｸﾞﾗﾌ表示するﾃﾞｰﾀ範囲配列(開始列, 開始行, 終了列, 終了行)
+        data_range (taple: int): ｸﾞﾗﾌ表示するﾃﾞｰﾀ範囲配列(開始列, 開始行, 終了列, 終了行)
         chart_title (str): ｸﾞﾗﾌﾀｲﾄﾙ
-        chart_position (str) : ｸﾞﾗﾌ挿入位置("A50")
+        chart_position (str) : ｸﾞﾗﾌ挿入位置(例: "A50")
 
     Returns:
         None
@@ -81,9 +88,9 @@ def create_and_insert_chart(file_path, sheet_name, data_range, chart_title, char
 
     filename = filedialog.asksaveasfilename(
         title = "名前を付けて保存",
-        filetypes = [("Excel", ".xls"), ("Excel", ".xlsx") ], # ファイルフィルタ
-        initialdir = "./", # 自分自身のディレクトリ
-        defaultextension = "bmp"
+        filetypes = [("Excel", ".xls"), ("Excel", ".xlsx") ], # ﾌｧｲﾙﾌｨﾙﾀ
+        initialdir = "./", # 自分自身のﾃﾞｨﾚｸﾄﾘ
+        defaultextension = "excel"
     )
 
     # 変更を保存してﾌｧｲﾙを閉じる
