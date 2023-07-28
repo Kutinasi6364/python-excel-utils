@@ -6,11 +6,9 @@ from tkinter import Tk, filedialog
 
 def write_cell_and_format(file_path, sheet_name, row, column, value, font=None, fill=None):
     """ ｾﾙ操作
-
     Overview:
         指定したExcelﾌｧｲﾙのｼｰﾄに対してセルの値を書き込む
         セルの書式設定を行う
-
     Args:
         file_path (str): Excelﾌｧｲﾙﾊﾟｽ
         sheet_name (str): ｼｰﾄ名
@@ -19,7 +17,6 @@ def write_cell_and_format(file_path, sheet_name, row, column, value, font=None, 
         value : ｾﾙに書き込む値
         font (openpyxl.styles.Font, optional): ｾﾙのﾌｫﾝﾄ情報
         fill (openpyxl.styles.PatternFill, optional): ｾﾙの書式情報
-
     Returns:
         None
     """
@@ -36,10 +33,10 @@ def write_cell_and_format(file_path, sheet_name, row, column, value, font=None, 
         cell.fill = fill
 
     filename = filedialog.asksaveasfilename(
-        title = "名前を付けて保存",
-        filetypes = [("Excel", ".xls"), ("Excel", ".xlsx") ], # ﾌｧｲﾙﾌｨﾙﾀ
-        initialdir = "./", # 自分自身のﾃﾞｨﾚｸﾄﾘ
-        defaultextension = "excel"
+        title="名前を付けて保存",
+        filetypes=[("Excel", ".xls"), ("Excel", ".xlsx")],  # ﾌｧｲﾙﾌｨﾙﾀ
+        initialdir="./",  # 自分自身のﾃﾞｨﾚｸﾄﾘ
+        defaultextension="excel"
     )
 
     wb.save(filename)
@@ -48,17 +45,14 @@ def write_cell_and_format(file_path, sheet_name, row, column, value, font=None, 
 
 def create_and_insert_chart(file_path, sheet_name, data_range, chart_title, chart_position):
     """ ｸﾞﾗﾌ作成
-
     Overview:
         ｸﾞﾗﾌの作成と挿入の自動化
-
     Args:
         file_path (str): Excelﾌｧｲﾙﾊﾟｽ
         sheet_name (str): ｼｰﾄ名
         data_range (taple: int): ｸﾞﾗﾌ表示するﾃﾞｰﾀ範囲配列(開始列, 開始行, 終了列, 終了行)
         chart_title (str): ｸﾞﾗﾌﾀｲﾄﾙ
         chart_position (str) : ｸﾞﾗﾌ挿入位置(例: "A50")
-
     Returns:
         None
     """
@@ -87,10 +81,10 @@ def create_and_insert_chart(file_path, sheet_name, data_range, chart_title, char
     ws.add_chart(chart, chart_position)  # 開始列, 開始行
 
     filename = filedialog.asksaveasfilename(
-        title = "名前を付けて保存",
-        filetypes = [("Excel", ".xls"), ("Excel", ".xlsx") ], # ﾌｧｲﾙﾌｨﾙﾀ
-        initialdir = "./", # 自分自身のﾃﾞｨﾚｸﾄﾘ
-        defaultextension = "excel"
+        title="名前を付けて保存",
+        filetypes=[("Excel", ".xls"), ("Excel", ".xlsx")],  # ﾌｧｲﾙﾌｨﾙﾀ
+        initialdir="./",  # 自分自身のﾃﾞｨﾚｸﾄﾘ
+        defaultextension="excel"
     )
 
     # 変更を保存してﾌｧｲﾙを閉じる
@@ -100,14 +94,11 @@ def create_and_insert_chart(file_path, sheet_name, data_range, chart_title, char
 
 def read_excel(file_path, sheet_name):
     """ Excel読み込み
-
     Overview:
         指定したExcelﾌｧｲﾙからﾃﾞｰﾀ読み込み
-
     Args:
         file_path (str): Excelﾌｧｲﾙﾊﾟｽ
         sheet_name (str): ｼｰﾄ名
-
     Returns:
         pandas.DataFrame: Excelﾌｧｲﾙから読み込まれた DataFrame ｵﾌﾞｼﾞｪｸﾄ
     """
@@ -118,13 +109,10 @@ def read_excel(file_path, sheet_name):
 
 def select_file_dialog():
     """ ﾌｧｲﾙ選択ﾀﾞｲｱﾛｸﾞ
-
     Overview:
         ﾌｧｲﾙをﾀﾞｲｱﾛｸﾞで選択する
-
     Args:
         None
-
     Returns:
         str: 選択したﾌｧｲﾙのﾊﾟｽ文字列
     """
@@ -141,13 +129,10 @@ def select_file_dialog():
 
 def select_folder_dialog():
     """ ﾌｫﾙﾀﾞ選択ﾀﾞｲｱﾛｸﾞ
-
     Overview:
         ﾌｫﾙﾀﾞをﾀﾞｲｱﾛｸﾞで選択する
-
     Args:
         None
-
     Returns:
         str: 選択したﾌｫﾙﾀﾞのﾊﾟｽ文字列
     """
@@ -160,4 +145,3 @@ def select_folder_dialog():
     root.destroy()  # ｳｲﾝﾄﾞｳ破棄
 
     return folder_path
-

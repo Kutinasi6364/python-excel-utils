@@ -6,10 +6,8 @@ def select_file_dialog():
 
     Overview:
         処理を行うﾌｧｲﾙを選択(複数選択可)
-
     Args:
         None
-
     Returns:
         file_path (str) : 選択したﾌｧｲﾙのﾊﾟｽ
     """
@@ -24,10 +22,8 @@ def select_file_dialog():
 
 def convert_excel_case(file_path, case_option):
     """ 大文字小文字変換
-
     Overview:
         半角英数を大文字 or 小文字 にすべて変換
-
     Args:
         file_path (str): 変換を行うﾌｧｲﾙﾊﾟｽ
         case_option (int): 0:大文字 1:小文字 選択

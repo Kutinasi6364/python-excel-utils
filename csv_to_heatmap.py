@@ -5,10 +5,8 @@ from tkinter import Tk, filedialog
 
 def select_csv_files():
     """ CSVﾌｧｲﾙﾊﾟｽ取得
-
     Overview:
         処理を行うCSVﾌｧｲﾙのパスを取得
-
     Returns:
         file_path (str) : 取得したﾃﾞｨﾚｸﾄﾘ
     """
@@ -22,13 +20,10 @@ def select_csv_files():
 
 def create_heatmap_from_csv(csv_file_path):
     """ ﾋｰﾄﾏｯﾌﾟ作成
-
     Overview:
         指定したCSVﾌｧｲﾙからﾋｰﾄﾏｯﾌﾟを作成する
-
     Args:
         csv_file_path (str): ﾌｧｲﾙﾊﾟｽ
-    
     Return:
         None
     """
